@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url("./images/mountain.jpg");
+  background-attachment: fixed;
+  background-position: top center;
+  background-size: cover;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  text-align: center;
+  border-bottom: 1px solid #2e8b57;
+}
+
+header {
+  height: 50px;
+  margin-top: 20px;
+
+  .logo {
+    font-family: 'Bowlby One SC', cursive;
+    float: left;
+    color: #2e8b57;
+    line-height: 50px;
+    font-size: 32px;
+    font-weight: bold;
+    margin-left: 30px;
+  }
+
+  .global-nav {
+    float: right;
+    margin-right: 50px;
+    line-height: 50px;
+
+    ul {
+      list-style: none;
+
+      li {
+        font-family: 'Bowlby One SC', cursive;
+        float: left;
+        width: 100px;
+        font-size: 20px;
+        color: #fff;
+        text-align: center;
+      }
+    }
+  }
+}
+
+#wrap {
+  clear: both;
+  background: #fff;
+  margin-top: 700px;
+
+  .content {
+    width: 960px;
+    margin: 0 auto;
+    padding: 50px 0;
+
+    .flowers {
+      padding-bottom: 30px;
+      ul {
+        list-style: none;
+        text-align: center;
+        li {
+          width: 280px;
+          padding: 0 20px;
+          float: left;
+
+          img {
+            width: 200px;
+            border-radius: 50%;
+          }
+
+          .name {
+            font-weight: bold;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+}
