@@ -64,12 +64,13 @@ header {
     padding: 50px 0;
 
     .flowers {
-      padding-bottom: 30px;
+      margin-bottom: 50px;
       ul {
         list-style: none;
         text-align: center;
         li {
           width: 280px;
+          margin-bottom: 25px;
           padding: 0 20px;
           float: left;
 
@@ -81,6 +82,53 @@ header {
           .name {
             font-weight: bold;
             font-size: 20px;
+            margin-top: 5px;
+          }
+        }
+      }
+
+      &:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+    }
+
+    .mountain-landscapes {
+      width: 960px;
+      overflow: hidden;
+      position: relative;
+
+      .slide-set {
+        position: absolute;
+        ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          li {
+            float: left;
+            img {
+              width: 960px;
+            }
+          }
+        }
+      }
+
+      .slide-dots {
+        width: 228px;
+        margin: 0 auto;
+        ul {
+          list-style: none;
+          li {
+            float: left;
+            margin: 20px;
+            .dot {
+              width: 15px;
+              height: 15px;
+              background: #fff;
+              border: 1px solid #2e8b57;
+              border-radius: 50%;
+            }
           }
         }
       }

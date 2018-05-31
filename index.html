@@ -22,8 +22,23 @@
   <div id="wrap">
     <div class="content">
       <div class="flowers">
-        <h2>夏場に咲く花</h2>
+        <h2>花</h2>
         <ul>
+          <li>
+            <img src="./images/thumbnail-a.jpg" alt="">
+            <div class="name">キバナコスモス</div>
+            <div class="description">メキシコ原産で夏場の暑さに強い</div>
+          </li>
+          <li>
+            <img src="./images/thumbnail-b.jpg" alt="">
+            <div class="name">ヒマワリ</div>
+            <div class="description">北アメリカ原産。太陽の動きに合わせて方向を変える特徴がある</div>
+          </li>
+          <li>
+            <img src="./images/thumbnail-c.jpg" alt="">
+            <div class="name">アサガオ</div>
+            <div class="description">種子は「牽牛子」（けんごし）と呼ばれる生薬として用いられ、日本薬局方にも収録されている。</div>
+          </li>
           <li>
             <img src="./images/thumbnail-a.jpg" alt="">
             <div class="name">キバナコスモス</div>
@@ -42,10 +57,102 @@
         </ul>
       </div>
       <div class="mountain-landscapes">
-
+        <h2>風景（スライドショー）</h2>
+        <div class="slider">
+          <div class="slide-set">
+            <ul>
+              <li class="slide"><img src="./images/landscape-slide-a.jpg" alt=""></li>
+              <li class="slide"><img src="./images/landscape-slide-b.jpg" alt=""></li>
+              <li class="slide"><img src="./images/landscape-slide-c.jpg" alt=""></li>
+              <li class="slide"><img src="./images/landscape-slide-d.jpg" alt=""></li>
+            </ul>
+          </div>
+        </div>
+        <div class="slide-dots">
+          <ul>
+          </ul>
+        </div>
+      </div>
+      <div class="nuts">
+        <table>
+          <tr>
+            <th></th>
+            <td></td>
+          </tr>
+          <tr>
+            <th></th>
+            <td></td>
+          </tr>
+          <tr>
+            <th></th>
+            <td></td>
+          </tr>
+          <tr>
+            <th></th>
+            <td></td>
+          </tr>
+          <tr>
+            <th></th>
+            <td></td>
+          </tr>
+        </table>
       </div>
     </div>
   </div>
   <footer></footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    $(function() {
+      var topSliderWidth = $('.content').width();
+      var topImageNum = $('.slider img').length;
+      var topSlideSetWidth = topSliderWidth * topImageNum * 2;
+      var topImageHeight = $('.slider img').height();
+      var topSlideDotWidth = 57;
+      var topSlideCount = 0;
+      var dotColor = '#2e8b57';
+
+      $('.slide-dots ul').append('<li><div class="dot"></div></li>'.repeat(topImageNum));
+      $('.slide-dots').css('width', topSlideDotWidth * topImageNum);
+
+      $('.slide-set').css('width', topSlideSetWidth);
+
+      $('.slider img').css('width', topSliderWidth);
+      $('.slider').css('height', topImageHeight);
+
+      $('.slide-dots .dot').eq(0).css('background', dotColor);
+
+      setInterval(function(){
+        topSlideCount++;
+        $('.slide-dots .dot').css('background', 'transparent');
+        $('.slide-dots .dot').eq(topSlideCount % topImageNum).css('background', dotColor);
+
+        if (topSlideCount == topImageNum) {
+          $('.slide-set ul').append($('.slide-set ul').html());
+          topSlideCount = 0;
+        }
+
+        $('.slide-set').animate({
+          left: topSliderWidth * -(topSlideCount % (topImageNum + 1)),
+        }).promise()
+        .done(function () {
+          if (topSlideCount == 0) {
+            $('.slide-set').css('left', 0);
+            $('.slide:nth-child(-n+' + topImageNum + ')').remove();
+          }
+        });
+      }, 3000);
+
+      $('.slide-dots .dot').click(function() {
+        var dotIndex = $('.slide-dots .dot').index(this);
+        topSlideCount = dotIndex;
+
+        $('.slide-set').animate({
+          left: topSliderWidth * -dotIndex,
+        }).promise();
+        $('.slide-dots .dot').css('background', '#fff');
+        $('.slide-dots .dot').eq(dotIndex).css('background', dotColor);
+      });
+    });
+  </script>
 </body>
 </html>
