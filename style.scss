@@ -16,7 +16,7 @@ ul {
 
 h2 {
   text-align: center;
-  border-bottom: 1px solid #2e8b57;
+  border-bottom: 1px solid #228b22;
 }
 
 header {
@@ -26,7 +26,7 @@ header {
   .logo {
     font-family: 'Bowlby One SC', cursive;
     float: left;
-    color: #2e8b57;
+    color: #228b22;
     line-height: 50px;
     font-size: 32px;
     font-weight: bold;
@@ -98,6 +98,7 @@ header {
       width: 960px;
       overflow: hidden;
       position: relative;
+      margin-bottom: 50px;
 
       .slide-set {
         position: absolute;
@@ -126,10 +127,35 @@ header {
               width: 15px;
               height: 15px;
               background: #fff;
-              border: 1px solid #2e8b57;
+              border: 1px solid #228b22;
               border-radius: 50%;
             }
           }
+        }
+      }
+    }
+
+    .tree-list {
+      table {
+        width: 800px;
+        margin: 0 auto;
+        border-spacing: 0;
+        border-collapse: collapse;
+      }
+      tr {
+        font-size: 18px;
+        line-height: 2.5;
+        th {
+          background: #228b22;
+          width: 200px;
+          border: 1px solid #006400;
+          color: #fff;
+        }
+
+        td {
+          border: 1px solid #006400;
+          width: 600px;
+          padding-left: 20px;
         }
       }
     }
