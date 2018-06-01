@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="./style.css">
   <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <title>Forest</title>
 </head>
 <body>
@@ -13,9 +14,9 @@
     <div class="logo">Forest</div>
     <nav class="global-nav">
       <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Profile</li>
+        <li><a href="">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Profile</a></li>
       </ul>
     </nav>
   </header>
@@ -98,6 +99,23 @@
           </tr>
         </table>
       </div>
+      <div class="inquiry-form">
+        <form action="">
+          <legend>お問い合わせはこちら</legend>
+          <dl>
+            <dt><span class="required">お名前</span></dt>
+            <dd><input type="text" name="name" class="name"></dd>
+            <dt><span class="required">メールアドレス</span></dt>
+            <dd><input type="text" name="email" class="email"></dd>
+            <dt><span class="required">お問い合わせ内容</span></dt>
+            <dd><textarea name="content" class="content"></textarea></dd>
+          </dl>
+          <button type="submit" class="btn">Submit</button>
+          <div class="attention">
+            <p>「<span class="required"></span>」の付いている項目は必須項目です。</p>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
   <footer></footer>
@@ -108,7 +126,7 @@
       var topImageNum = $('.slider img').length;
       var topSlideSetWidth = topSliderWidth * topImageNum * 2;
       var topImageHeight = $('.slider img').height();
-      var topSlideDotWidth = 57;
+      var topSlideDotWidth = 45;
       var topSlideCount = 0;
       var dotColor = '#228b22';
 
@@ -129,16 +147,16 @@
 
         if (topSlideCount == topImageNum) {
           $('.slide-set ul').append($('.slide-set ul').html());
-          topSlideCount = 0;
         }
 
         $('.slide-set').animate({
           left: topSliderWidth * -(topSlideCount % (topImageNum + 1)),
         }).promise()
         .done(function () {
-          if (topSlideCount == 0) {
+          if (topSlideCount == topImageNum) {
             $('.slide-set').css('left', 0);
             $('.slide:nth-child(-n+' + topImageNum + ')').remove();
+            topSlideCount = 0;
           }
         });
       }, 3000);
