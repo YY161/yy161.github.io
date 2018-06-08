@@ -15,8 +15,11 @@ ul {
 }
 
 h2 {
+  background: #228b22;
+  color: #fff;
   text-align: center;
-  border-bottom: 1px solid #228b22;
+  background: -webkit-repeating-linear-gradient(-45deg, #228b22, #228b22 3px, #008000 3px, #008000 7px);
+  background: repeating-linear-gradient(-45deg, #228b22, #228b22 3px, #008000 3px, #008000 7px);
 }
 
 header {
@@ -61,15 +64,24 @@ header {
   }
 }
 
+footer {
+  line-height: 3;
+  background: #006400;
+  color: #fff;
+  text-align: center;
+}
+
 #wrap {
   clear: both;
-  background: #fff;
+  background: #228b22;
   margin-top: 700px;
-  padding: 50px 0;
+  padding-bottom: 50px;
 
   .content {
     width: 960px;
     margin: 0 auto;
+    background: #fff;
+    padding: 30px 50px;
 
     .flowers {
       margin-bottom: 50px;
@@ -168,7 +180,7 @@ header {
       padding: 30px 0;
 
       legend {
-        padding-left: 100px;
+        padding-left: 80px;
         font-size: 18px;
         font-weight: bold;
       }
@@ -178,8 +190,8 @@ header {
           padding: 10px 0;
         }
         dt {
-          width: 150px;
-          padding-left: 100px;
+          width: 200px;
+          padding-left: 80px;
           float: left;
         }
 
@@ -190,7 +202,7 @@ header {
             font-size: 16px;
             border: none;
           }
-          .content {
+          .message {
             width: 500px;
             height: 150px;
             font-size: 16px;
@@ -201,7 +213,7 @@ header {
 
       .btn {
         font-family: 'Raleway', sans-serif;
-        margin-left: 250px;
+        margin-left: 280px;
         width: 120px;
         font-size: 24px;
         color: #fff;
@@ -218,7 +230,7 @@ header {
       }
 
       .attention {
-        margin: 40px 0 0 250px;
+        margin: 40px 0 0 280px;
         p {
           font-size: 14px;
         }
