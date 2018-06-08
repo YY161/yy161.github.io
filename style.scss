@@ -15,8 +15,11 @@ ul {
 }
 
 h2 {
+  background: #228b22;
+  color: #fff;
   text-align: center;
-  border-bottom: 1px solid #228b22;
+  background: -webkit-repeating-linear-gradient(-45deg, #228b22, #228b22 3px, #008000 3px, #008000 7px);
+  background: repeating-linear-gradient(-45deg, #228b22, #228b22 3px, #008000 3px, #008000 7px);
 }
 
 header {
@@ -63,13 +66,14 @@ header {
 
 #wrap {
   clear: both;
-  background: #fff;
+  background: #228b22;
   margin-top: 700px;
-  padding: 50px 0;
 
   .content {
     width: 960px;
     margin: 0 auto;
+    background: #fff;
+    padding: 30px 50px;
 
     .flowers {
       margin-bottom: 50px;
@@ -190,7 +194,7 @@ header {
             font-size: 16px;
             border: none;
           }
-          .content {
+          .message {
             width: 500px;
             height: 150px;
             font-size: 16px;
